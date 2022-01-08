@@ -1,0 +1,195 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+  font-family: 'Montserrat', sans-serif;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+h3 {
+  margin: 2.5rem auto 1rem;
+  font-size: 2.25rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+h3 + p {
+  margin: 0 auto 2.5rem;
+  font-size: 1.25rem;
+  font-weight: 300;
+  text-align: center;
+}
+
+.piano--container {
+  background: transparent;
+  width: 35%;
+  height: 25%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.piano--container .piano--key {
+  width: calc(100% / 14);
+  background: #f8f8f8;
+  height: 100%;
+  border: 1px solid #e4e4e4;
+  border-radius: 0 0 .35rem .35rem;
+  -webkit-box-shadow: 0px 6px 12px rgba(50, 50, 50, 0.1), 0px 3px 5px rgba(60, 60, 60, 0.3);
+  box-shadow: 0px 6px 12px rgba(50, 50, 50, 0.1), 0px 3px 5px rgba(60, 60, 60, 0.3);
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 1;
+  -webkit-transition: all .1s linear;
+  transition: all .1s linear;
+}
+
+.piano--container .piano--key:hover {
+  z-index: 0;
+  -webkit-transform: scaleY(0.99);
+  transform: scaleY(0.99);
+  -webkit-transform-origin: top;
+  transform-origin: top;
+  -webkit-box-shadow: 0px 3px 3px rgba(50, 50, 50, 0.2), 0px -8px 12px rgba(50, 50, 50, 0.1) inset;
+  box-shadow: 0px 3px 3px rgba(50, 50, 50, 0.2), 0px -8px 12px rgba(50, 50, 50, 0.1) inset;
+}
+
+.piano--container .piano--key:hover::after {
+  display: none;
+}
+
+.piano--container .piano--key::after {
+  content: '';
+  width: 85%;
+  height: 92.5%;
+  border: none;
+  border-bottom: 2px solid #fff;
+  border-left: 2px solid #fff;
+  border-right: 2px solid #fff;
+  display: block;
+  position: absolute;
+  bottom: 2%;
+  left: 2.5%;
+  right: 2.5%;
+  -webkit-filter: blur(1px);
+  filter: blur(1px);
+}
+
+.piano--container .piano--key:nth-child(2), .piano--container .piano--key:nth-child(4), .piano--container .piano--key:nth-child(7), .piano--container .piano--key:nth-child(9), .piano--container .piano--key:nth-child(11), .piano--container .piano--key:nth-child(14), .piano--container .piano--key:nth-child(16), .piano--container .piano--key:nth-child(19), .piano--container .piano--key:nth-child(21), .piano--container .piano--key:nth-child(23) {
+  background: black;
+  width: calc(100% / 24);
+  height: 75%;
+  margin: 0 0 auto;
+  border: none;
+  -webkit-box-shadow: 0px 8px 12px rgba(50, 50, 50, 0.3), 0px 3px 2px rgba(60, 60, 60, 0.3);
+  box-shadow: 0px 8px 12px rgba(50, 50, 50, 0.3), 0px 3px 2px rgba(60, 60, 60, 0.3);
+  overflow: visible;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+}
+
+.piano--container .piano--key:nth-child(2)::after, .piano--container .piano--key:nth-child(4)::after, .piano--container .piano--key:nth-child(7)::after, .piano--container .piano--key:nth-child(9)::after, .piano--container .piano--key:nth-child(11)::after, .piano--container .piano--key:nth-child(14)::after, .piano--container .piano--key:nth-child(16)::after, .piano--container .piano--key:nth-child(19)::after, .piano--container .piano--key:nth-child(21)::after, .piano--container .piano--key:nth-child(23)::after {
+  width: 57.5%;
+  height: 97%;
+  border-bottom: 8px solid #d3d3d3;
+  border-left: 8px solid #d3d3d3;
+  border-right: 8px solid #d3d3d3;
+  opacity: .4;
+  bottom: 0;
+  left: -7.5%;
+  right: 7.5%;
+  -webkit-filter: blur(0.135rem);
+  filter: blur(0.135rem);
+  overflow: hidden;
+}
+
+.piano--container .piano--key:nth-child(2):hover, .piano--container .piano--key:nth-child(4):hover, .piano--container .piano--key:nth-child(7):hover, .piano--container .piano--key:nth-child(9):hover, .piano--container .piano--key:nth-child(11):hover, .piano--container .piano--key:nth-child(14):hover, .piano--container .piano--key:nth-child(16):hover, .piano--container .piano--key:nth-child(19):hover, .piano--container .piano--key:nth-child(21):hover, .piano--container .piano--key:nth-child(23):hover {
+  -webkit-transform: scaleY(0.99);
+  transform: scaleY(0.99);
+  -webkit-transform-origin: top;
+  transform-origin: top;
+  -webkit-box-shadow: 0px 3px 3px rgba(50, 50, 50, 0.2), 0px -8px 12px rgba(50, 50, 50, 0.1) inset;
+  box-shadow: 0px 3px 3px rgba(50, 50, 50, 0.2), 0px -8px 12px rgba(50, 50, 50, 0.1) inset;
+}
+
+.piano--container .piano--key:nth-child(2):hover::after, .piano--container .piano--key:nth-child(4):hover::after, .piano--container .piano--key:nth-child(7):hover::after, .piano--container .piano--key:nth-child(9):hover::after, .piano--container .piano--key:nth-child(11):hover::after, .piano--container .piano--key:nth-child(14):hover::after, .piano--container .piano--key:nth-child(16):hover::after, .piano--container .piano--key:nth-child(19):hover::after, .piano--container .piano--key:nth-child(21):hover::after, .piano--container .piano--key:nth-child(23):hover::after {
+  display: block;
+}
+
+.piano--container .piano--key:nth-child(2) {
+  left: 5%;
+}
+
+.piano--container .piano--key:nth-child(4) {
+  left: 11.5%;
+}
+
+.piano--container .piano--key:nth-child(7) {
+  left: 26.5%;
+}
+
+.piano--container .piano--key:nth-child(9) {
+  left: 33.5%;
+}
+
+.piano--container .piano--key:nth-child(11) {
+  left: 41%;
+}
+
+.piano--container .piano--key:nth-child(14) {
+  left: 55.25%;
+}
+
+.piano--container .piano--key:nth-child(16) {
+  left: 62.25%;
+}
+
+.piano--container .piano--key:nth-child(19) {
+  left: 69.25%;
+}
+
+.piano--container .piano--key:nth-child(21) {
+  left: 83.5%;
+}
+
+.piano--container .piano--key:nth-child(23) {
+  left: 90.5%;
+}
+/*# sourceMappingURL=style.css.map */
