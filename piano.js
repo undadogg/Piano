@@ -3,7 +3,7 @@ var piano = document.querySelector('.piano--container'),
     pianoKSounds = document.querySelectorAll('.piano--container li audio');
 
 pianoKeys.forEach( (pianoKey, index) => {
-    pianoKey.addEventListener('click', function(){
+    pianoKey.addEventListener('click', () => {
         console.log(pianoKSounds[index].src)
         pianoKSounds[index].currentTime = 0   
         pianoKSounds[index].play()
